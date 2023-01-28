@@ -476,3 +476,151 @@ Here is the infix to postfix conversion of the expression "A + (B*C-(D/E^F)*G)*H
 </table>
 
 So the postfix expression is : ABC*DEF^/G-H
+
+#### 16) What do you mean by an algorithm? Explain the concept of time and space complexity?
+
+An algorithm is a set of instructions or steps for solving a particular problem or completing a specific task. It is a well-defined procedure that takes an input, performs a sequence of operations, and produces an output. The concept of time and space complexity is used to analyze and compare the efficiency of different algorithms.
+
+- Time complexity refers to the amount of time an algorithm takes to run as a function of the size of the input. It is usually expressed using big O notation, which describes the upper bound on the running time of an algorithm. For example, an algorithm with a time complexity of O(n) means that its running time increases linearly with the size of the input.
+
+- Space complexity refers to the amount of memory an algorithm uses as a function of the size of the input. Like time complexity, it is also expressed using big O notation. An algorithm with a space complexity of O(1) uses a constant amount of memory, regardless of the size of the input.
+
+It is important to note that time and space complexity are not the only factors to consider when evaluating an algorithm. The readability, maintainability, and other characteristics of an algorithm are also important.
+
+In summary, Time complexity and Space complexity are the measure of how much time and how much space an algorithm takes to run respectively. It is important to understand the time and space complexity of an algorithm, as it gives an idea of how well it will perform for large inputs and how much resources it will consume.
+
+#### 17) 
+#### Ans:
+A sparse matrix is a matrix in which most of the elements are zero. Sparse matrices are often used in scientific and engineering applications where the matrices are large and mostly empty. These matrices are useful for memory and computational efficiency because they take up less memory than a dense matrix, which is a matrix in which most of the elements are non-zero.
+
+There are several ways to represent a sparse matrix using an array, two common methods are :
+
+- Compressed sparse row (CSR) representation:
+In this representation, the matrix is stored in three arrays: a values array, a row pointer array, and a column index array. The values array contains all the non-zero elements of the matrix, and the row pointer array stores the indices of the first element of each row in the values array. The column index array stores the column indices of the elements in the values array. The representation is called "compressed" because the row pointer array and column index array compress the information about the matrix's non-zero elements into a smaller amount of space.
+
+- Compressed sparse column (CSC) representation:
+This method is similar to CSR representation, but the column pointer array and row index array are used instead of the row pointer array and column index array.
+
+For example, consider a sparse matrix A with the following values:
+
+<center>
+<table border="1">
+  <thead>
+    <tr>
+      <th>0</th>
+      <th>3</th>
+      <th>0</th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+In CSR representation, the values array would be [3, 4, 2], the row pointer array would be [0, 1, 2, 3], and the column index array would be [1, 2, 1].
+
+In CSC representation, the values array would be [3, 4, 2], the column pointer array would be [0, 1, 2, 3], and the row index array would be [0, 1, 3].
+
+Note that the sparse matrix representation is useful when the matrix is mostly empty or filled with zero values, but when the matrix is mostly filled with non-zero values, a dense matrix representation is more efficient.
+
+#### 16) What would be the complexity of insertion sort if elements are stored randomly and if the elements are stored in ascending order?
+### Ans:
+```
+Insertion sort is an in-place sorting algorithm that works by repeatedly taking an unsorted element from the input and inserting it into the correct position in the sorted portion of the array. The time complexity of insertion sort depends on how the elements are stored in the array before the sorting process begins.
+
+If the elements are stored randomly, the time complexity of insertion sort is O(n^2). This is because in the worst case scenario, the algorithm will have to shift all of the elements to the right in order to insert the current element in its correct position. This can happen when the array is sorted in descending order.
+
+If the elements are already stored in ascending order, the time complexity of insertion sort is O(n). This is because in this case, the algorithm will not have to shift any elements to the right in order to insert the current element in its correct position. This can happen when the array is already sorted in ascending order.
+
+It's worth mentioning that the best-case scenario for insertion sort is O(n) when the array is already sorted, but the average and worst-case scenario is O(n^2) since the algorithm compares each element with the one before it.
+
+In summary, the time complexity of insertion sort depends on how the elements are stored in the array before the sorting process begins. If the elements are stored randomly, the time complexity is O(n^2) in worst case and if the elements are already stored in ascending order, the time complexity is O(n) in best case.
+```
+
+#### 17) Write down the advantages of linked lists over arrays?
+### Ans:
+There are several advantages of linked lists over arrays:
+
+1) Dynamic size: Linked lists can grow or shrink in size during the execution of a program, whereas the size of an array is fixed when it is declared.
+
+1) Efficient memory allocation: Linked lists only allocate memory for the elements that are currently in the list, whereas arrays pre-allocate a block of memory for a fixed number of elements, even if not all of them are being used.
+
+1) Efficient insertion and deletion: Inserting or deleting an element in a linked list takes constant time, regardless of the size of the list. However, in an array, these operations take linear time, as elements may need to be shifted to make room for a new element or fill a gap left by a deleted element.
+
+1) No memory wastage: In a linked list, memory is allocated only when a new element is added and freed when an element is removed, whereas in an array, memory is allocated in a block, regardless of how many elements are actually used.
+
+1) Flexibility: Linked lists can be used to implement several data structures such as stacks, queues, and symbol tables. Arrays, on the other hand, have a fixed structure and can be used to implement only a few data structures.
+
+1) No cache miss: In case of arrays, if the elements are not stored in contiguous memory locations, then it will cause cache miss which will increase the access time, but in linked list as the elements are stored in heap and the next pointer is stored in the same location as the element so it will cause no cache miss.
+
+It's worth noting that linked lists have certain disadvantages too, such as the need for additional memory to store the pointers that connect the elements, and slower random access time. Therefore, the choice between using a linked list or an array depends on the specific requirements of the problem being solved.
+
+#### 18) Write down the advantages of linked lists over arrays?
+### Ans:
+Stacks and queues are two fundamental data structures that have a wide range of applications in computer science and software engineering.
+
+##### Stacks:
+1) Undo/Redo operations in text editors and word processors: The text editor keeps track of the previous states of the document using a stack.
+1) Browser history: When a user clicks the back button, the browser pops the current web page from the top of the stack, revealing the previous web page.
+1) Expression evaluation: When evaluating arithmetic expressions using postfix notation, a stack is used to hold the operands and perform the calculations.
+1) Parentheses matching: A stack is used to check whether the parentheses in a mathematical expression are balanced or not.
+1) Memory management: The stack is used by the computer's memory manager to keep track of function calls and return addresses.
+
+##### Queues:
+1) CPU scheduling: A queue is used to keep track of the processes that are waiting to be executed by the CPU.
+1) Printing jobs: A queue is used to hold the jobs that are waiting to be printed.
+1) Traffic control: A queue is used to control the flow of vehicles at a traffic signal.
+1) Breadth-first search: A queue is used to keep track of the next vertex to be visited while traversing a graph.
+1) Asynchronous task execution: A queue is used to hold the tasks that need to be executed asynchronously, such as sending an email or generating a report.
+  
+These are just some examples, but stacks and queues are also used in many other applications such as network protocol design, database management, and operating system design, to name a few.
+
+
+#### 19) Write an algorithm to sort elements using Quicksort? Explain it with the help of an example?
+#### Ans:
+The Quicksort algorithm can be described in the following steps:
+
+1) Select a pivot element from the array. This element will be used to partition the array into two subarrays.
+1) Create two empty arrays, one for elements less than the pivot and one for elements greater than the pivot.
+1) Iterate through the array and compare each element to the pivot. Elements that are less than the pivot are added to the left array, and elements that are greater than the pivot are added to the right array.
+1) Recursively sort the left array using the Quicksort algorithm.
+1) Recursively sort the right array using the Quicksort algorithm.
+1) Concatenate the left array, the pivot element, and the right array to form the final sorted array.
+
+Here's an example of the quicksort algorithm applied to the array [8, 5, 2, 9, 7, 6, 3, 1]:
+
+1) Choose a pivot element, in this case, we'll choose the element at the middle of the array, which is the element '5'.
+1) Create two empty arrays, one for elements less than the pivot and one for elements greater than the pivot.
+1) Iterate over the array and compare each element to the pivot element. Elements less than the pivot are added to the left array and elements greater than the pivot are added to the right array.
+  ```
+    [8, 5, 2, 9, 7, 6, 3, 1]
+    pivot: 5
+    left array: [2, 1, 3]
+    right array: [8, 9, 7, 6]
+  ```
+1) Recursively sort the left array using the quicksort algorithm.
+1) Recursively sort the right array using the quicksort algorithm.
+1) Concatenate the left array, the pivot element, and the right array to get the final sorted array: [1, 2, 3, 5, 6, 7, 8, 9].
+
+The time complexity of Quicksort is O(n log n) on average, but it could be O(n^2) in worst-case scenarios, if the pivot element is chosen as the largest or smallest element in the array. This is why it's important to choose a pivot element that's close to the middle of the array to ensure a balanced partition.
+
+Quicksort is a popular and efficient sorting algorithm, and is widely used in many programming languages, such as C++ and Java. The algorithm is implemented in-place, which means it uses a small constant amount of memory, making it suitable for sorting large data sets.
