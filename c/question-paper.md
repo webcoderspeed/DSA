@@ -516,7 +516,7 @@ It is important to note that time and space complexity are not the only factors 
 
 In summary, Time complexity and Space complexity are the measure of how much time and how much space an algorithm takes to run respectively. It is important to understand the time and space complexity of an algorithm, as it gives an idea of how well it will perform for large inputs and how much resources it will consume.
 
-#### 17)
+#### 17) What do you mean by sparse matrix. Show its representation using array.
 
 #### Ans:
 
