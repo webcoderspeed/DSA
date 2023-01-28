@@ -41,7 +41,7 @@ After calling reverse() function, the list should be : 4->3->2->1
 
 ```
 
-#### 2) What is AVL tree?
+#### 3) What is AVL tree?
 #### Ans: 
   - AVL tree is a self-balancing binary search tree
   - The difference in the height of the left and right subtrees of any node is at most 1, which helps to keep the tree balanced
@@ -55,7 +55,7 @@ After calling reverse() function, the list should be : 4->3->2->1
 
 
 
-#### 3) What is Priority Queue?
+#### 4) What is Priority Queue?
 #### Ans: 
 - A priority queue is a type of queue in which each element is assigned a priority
 - Elements with higher priority are dequeued before elements with lower priority
@@ -68,7 +68,7 @@ After calling reverse() function, the list should be : 4->3->2->1
 - the priority queue can be used in real-time systems, schedulers, and many other applications where elements need to be processed in order of priority.
 
 
-#### 4) How the selection of a particular data structure is done to solve a problem??
+#### 5) How the selection of a particular data structure is done to solve a problem?
 #### Ans: 
 The selection of a particular data structure for a problem is typically done based on the following considerations:
 
@@ -86,3 +86,55 @@ The selection of a particular data structure for a problem is typically done bas
 
 Ultimately, the decision on which data structure to use will depend on the specific requirements of the problem and the trade-offs that need to be made.
 
+
+#### 6) What do you mean by best, average and worst case of an algorithm?
+#### Ans: 
+When analyzing the performance of an algorithm, it's common to consider three different scenarios: best-case, average-case, and worst-case.
+
+- Best-case scenario: This is the scenario where the algorithm performs the best, that is the inputs are already sorted or the algorithm finds the solution in the least number of steps. The best-case scenario is usually represented by the best-case time complexity of an algorithm, which is the lowest amount of time the algorithm will take to complete when given the best possible input.
+
+- Average-case scenario: This is the scenario where the algorithm is given a random set of inputs. The average-case time complexity of an algorithm is the expected amount of time the algorithm will take to complete when given a random set of inputs.
+
+- Worst-case scenario: This is the scenario where the algorithm performs the worst, that is the inputs are in the worst possible order or the algorithm takes the longest number of steps to find the solution. The worst-case scenario is usually represented by the worst-case time complexity of an algorithm, which is the highest amount of time the algorithm will take to complete when given the worst possible input.
+
+It's important to note that the best-case and worst-case scenarios are usually used to provide an upper and lower bound on the performance of an algorithm, respectively. The average-case scenario is usually the most relevant when analyzing the performance of an algorithm in practice.
+
+#### 7) Write selection sort algorithm?
+#### Ans: 
+Selection sort is a simple sorting algorithm that repeatedly selects the minimum element from an unsorted portion of the list and moves it to the sorted portion of the list. The algorithm proceeds as follows:
+
+- Starting at the first element of the list, find the smallest element in the unsorted portion of the list.
+
+- Swap the found element with the first element of the unsorted portion of the list.
+
+- Move the boundary of the sorted portion of the list one element to the right.
+
+- Repeat steps 1-3 until the entire list is sorted.
+
+It has a time complexity of O(n^2) and it not efficient for large set of data.
+
+#### 8) What do you mean by stack overflow?
+#### Ans: 
+- A stack overflow is a type of error that occurs when a program attempts to use more memory space than the call stack has available. The call stack is a memory structure that stores the memory addresses of active function calls and their associated data. Each time a function is called, its memory address is added to the call stack, and each time a function returns, its memory address is removed from the stack.
+
+- When a program is running, the call stack is used to keep track of the current state of the program and the order in which functions are called. When a program requests more memory than the stack can provide, the program will crash with a stack overflow error.
+
+- In general, Stack overflow occur when a program or a recursion call is using too much memory by creating too many function calls or using too much local variable. Programmers can prevent stack overflow by using better algorithms that use less memory, or by increasing the size of the call stack.
+- 
+#### 9) Write DFS technique steps?
+#### Ans: 
+DFS (Depth-First Search) is a technique used to traverse a graph or a tree data structure. The basic steps of the DFS algorithm are as follows:
+
+- Start at the root node (or any arbitrary node) of the graph.
+
+- Mark the current node as visited.
+
+- For each unvisited neighboring node of the current node, recursively repeat steps 2 and 3.
+
+- When all the neighboring nodes of the current node have been visited, backtrack to the previous node and repeat steps 2 and 3.
+
+- Continue this process until all the nodes in the graph have been visited.
+
+- Optionally, you can also store the nodes in a stack or a queue as you visit them.
+
+DFS can be implemented using recursion or using a stack data structure. It has time complexity of O(V+E) in worst case where V is number of vertices and E is number of edges.
