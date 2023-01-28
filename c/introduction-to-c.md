@@ -1,6 +1,13 @@
 ### Introduction to C
   ---
-  > C is a general-purpose, procedural computer programming language. It was developed in the early 1970s by Dennis Ritchie at Bell Labs. C is a low-level programming language, which means that it can be used to write programs that directly interact with the computer's hardware, such as operating systems, device drivers, and embedded systems. C is also widely used for writing high-performance applications and is the foundation of many other programming languages such as C++, Java, and Python. Some of the key features of C include its simple syntax, powerful operators, and support for low-level programming.
+- Designed by Dennis Ritchie
+- First appearance- 1972
+- Uses extension .c or .h
+- Developed to make assembly language work much easier
+- Procedural Language
+- Much faster
+- Handles low-level activity much better
+- UNIX OS and RDBMS MYSQL is written in C
 
 #### Here is an example of a simple C program that prints "Hello, World!" to the console:
 
