@@ -6,10 +6,10 @@
 - Stores homogeneous elements i.e, similar elements
 - Syntax:
 - Array declaration
-> Datatype varname [size]  ;
-> 
-> Can also do declaration and initialization at once
-  Datatype varname [] = {ele1, ele2, ele3, ele4};
+  > Datatype varname [size]  ;
+   
+  > Can also do declaration and initialization at once
+    Datatype varname [] = {ele1, ele2, ele3, ele4};
 
 
 #### An array is a collection of elements of the same data type stored in contiguous memory locations. Elements are accessed by their index, which is an integer value. Here is an example of an array in C:
@@ -44,5 +44,6 @@ int main() {
 - Needs contiguous memory to get allocated
 
 #### Applications
+---
 - For storing information in a linear fashion
 - Suitable for applications that require frequent searching

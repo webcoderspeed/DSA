@@ -56,5 +56,6 @@ int main() {
 - No random access possible
 
 #### Applications
+---
 - Suitable where memory is limited 
 - Suitable for applications that require frequent insertion and deletion
