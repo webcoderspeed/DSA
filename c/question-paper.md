@@ -138,3 +138,341 @@ DFS (Depth-First Search) is a technique used to traverse a graph or a tree data 
 - Optionally, you can also store the nodes in a stack or a queue as you visit them.
 
 DFS can be implemented using recursion or using a stack data structure. It has time complexity of O(V+E) in worst case where V is number of vertices and E is number of edges.
+
+#### 10) Write short note on BST?
+#### Ans: 
+- A binary search tree (BST) is a node-based data structure in which each node has at most two children, which are referred to as the left child and the right child. The left child of a node contains only nodes with keys lesser than the node's key, while the right child of a node contains only nodes with keys greater than the node's key. The topmost node in a binary search tree is called the root.
+
+- BSTs are commonly used to implement efficient searching and sorting algorithms. The average time complexity for searching an element in a binary search tree is O(log n) which is much better than O(n) for linear search. The time complexity for inserting and deleting a node is also O(log n) on average.
+
+- However, the time complexity of a binary search tree can degrade to O(n) in the worst case if the tree becomes skewed (unbalanced) due to a poor choice of keys for insertion or deletion. To avoid this, various techniques such as self-balancing trees are used to maintain the balance of the tree.
+
+#### 10) What do you mean by Data Structure? Explain the types of data structures?
+#### Ans: 
+A data structure is a way of organizing and storing data in a computer so that it can be accessed and modified efficiently. Data structures are used to represent real-world entities and relationships in a way that the computer can understand and manipulate.
+
+There are two main types of data structures:
+
+1) Linear data structures: These are data structures that store data in a linear order, such as arrays, linked lists, stacks, and queues.
+
+2) Non-linear data structures: These are data structures that store data in a hierarchical or non-linear order, such as trees, graphs, and hash tables.
+
+There are also several sub-types of data structures:
+
+1) Arrays: A collection of elements of the same type stored in contiguous memory locations.
+
+1) Linked Lists: A sequence of elements, each containing a reference to the next element.
+
+1) Stacks: A last-in, first-out (LIFO) data structure.
+
+1) Queues: A first-in, first-out (FIFO) data structure.
+
+1) Trees: A hierarchical data structure with a root node and child nodes.
+
+1) Graphs: A non-linear data structure consisting of a set of vertices and edges connecting them.
+
+1) Hash tables: A data structure that uses a hash function to map keys to values, allowing for efficient insertion, deletion, and lookup operations.
+
+1) Heaps: A special kind of binary tree where each parent node is less than or equal to its child nodes.
+
+Each data structure has its own advantages and disadvantages and are suited for different types of problems. Choosing the right data structure for a particular problem is an important aspect of computer science and software development.
+
+#### 11) What are the advantages of circular queue over traditional queue(simple queue)?
+#### Ans: 
+A circular queue is a variation of a traditional queue (also known as a simple queue) that has the following advantages:
+
+1) Memory Utilization: In a traditional queue, once the last position is filled, it can't be used again until all other positions are freed. In a circular queue, the last position can be reused once the first position is freed, thus utilizing the memory more efficiently.
+
+1) Dynamic memory allocation: In a traditional queue, the size of the queue must be fixed at the time of its creation, and it cannot be changed later. In a circular queue, the size of the queue can be changed dynamically, thus allowing for more flexibility.
+
+1) Reduced Overhead: In a traditional queue, when the queue is full and a new element is added, the oldest element must be removed before the new element can be added. This operation is called overflow and it results in increased overhead. In a circular queue, this type of overflow does not occur because the oldest element is overwritten by the new element.
+
+1) Easy implementation: Circular Queue is easy to implement as compared to traditional queue.
+
+1) Better performance: In some cases, circular queue performs better than traditional queue in terms of time complexity.
+
+It's worth noting that while circular queue has some advantages over traditional queue, it also has some disadvantages, such as the need to keep track of the head and tail of the queue, and the need for extra memory to distinguish between an empty and a full queue. Therefore, it is important to choose the correct data structure based on the specific requirements of the problem at hand.
+
+#### 12) Write a program to remove duplicates from linked list?
+#### Ans: 
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+// Function to remove duplicates from a linked list
+void removeDuplicates(struct Node* head) {
+    struct Node* current = head;
+    struct Node* next_next;
+
+    if (current == NULL)
+        return;
+
+    while (current->next != NULL) {
+        if (current->data == current->next->data) {
+            next_next = current->next->next;
+            free(current->next);
+            current->next = next_next;
+        } else {
+            current = current->next;
+        }
+    }
+}
+
+// Function to insert a new node at the beginning of the linked list
+void push(struct Node** head_ref, int new_data) {
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
+    new_node->data = new_data;
+    new_node->next = (*head_ref);
+    (*head_ref) = new_node;
+}
+
+// Function to print the linked list
+void printList(struct Node* head) {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+}
+
+// Driver code
+int main() {
+    struct Node* head = NULL;
+    push(&head, 1);
+    push(&head, 2);
+    push(&head, 2);
+    push(&head, 3);
+    push(&head, 3);
+    push(&head, 4);
+    printf("Linked list before removing duplicates: ");
+    printList(head);
+    removeDuplicates(head);
+    printf("\nLinked list after removing duplicates: ");
+    printList(head);
+    return 0;
+}
+
+```
+
+This program uses a linked list with a struct Node that contains an integer value data and a pointer to the next node in the list. The removeDuplicates() function iterates through the list and removes any duplicate nodes. The push() function is used to insert new nodes at the beginning of the list, and the printList() function is used to print the contents of the list.
+
+#### 13) Explain linear search and binary search technique and compare complexity of both the techniques?
+#### Ans: 
+- Linear search is a simple search technique that involves iterating through a collection of elements, one by one, until the desired element is found. It is also known as a sequential search. The complexity of linear search is O(n), where n is the number of elements in the collection. This means that the time it takes to perform a linear search increases linearly with the number of elements in the collection.
+
+- Binary search, on the other hand, is a more efficient search technique that is used on a sorted collection of elements. It works by repeatedly dividing the collection in half, and discarding half of the elements at each step. The desired element is then either in the remaining half or it is not present in the collection. The complexity of binary search is O(log n), where n is the number of elements in the collection. This means that the time it takes to perform a binary search increases logarithmically with the number of elements in the collection, making it more efficient than linear search for large collections of data.
+
+In summary, both linear search and binary search are methods for finding a specific element in a collection of data. Linear search is simple to implement and has a linear time complexity of O(n), while binary search is more efficient and has a logarithmic time complexity of O(log n) but requires the input collection to be sorted.
+
+#### 13) What is the objective of hashing? Also name some collision handling techniques.
+#### Ans:
+
+The primary objective of hashing is to create a data structure, known as a hash table, that allows for fast and efficient insertion, deletion, and retrieval of data. A hash function is used to map the data (keys) to an index in the hash table, where the corresponding value can be stored and accessed quickly. The process of mapping keys to indices is known as hashing.
+
+A collision occurs when two or more keys are mapped to the same index in the hash table, known as a collision. Collision handling techniques are used to resolve collisions and ensure that the data can still be inserted, deleted, and retrieved quickly. Some commonly used collision handling techniques include:
+
+1) Open addressing: This technique involves finding the next available empty slot in the hash table to store the data in case of a collision. The most common open addressing technique is linear probing, which involves finding the next empty slot by incrementing the index of the original hash value.
+
+1) Chaining: This technique involves creating a linked list at each index in the hash table to store all the data that maps to that index. This allows for multiple keys to be stored at the same index without any loss of data.
+
+1) Rehashing: This technique involves using a second hash function to map the data to a new index in case of a collision.
+
+1) Cuckoo Hashing: This is a technique that uses two hash functions and two hash tables in order to minimize the chance of collision.
+
+The choice of collision handling technique depends on the specific requirements of the application, such as the size of the hash table, the number of collisions expected, and the memory constraints of the system.
+
+#### 14) Write the algorithm for stack push operation?
+#### Ans:
+The algorithm for a stack push operation can be described as follows:
+
+1) Check if the stack is full. If it is full, the push operation cannot be performed and the algorithm exits.
+
+1) If the stack is not full, increase the stack pointer by 1.
+
+1) Store the value to be pushed at the location pointed to by the stack pointer.
+
+1) Exit the algorithm.
+
+In summary, a push operation on a stack involves adding an element to the top of the stack, if the stack has space, by updating the stack pointer and storing the new value at the location pointed by the updated stack pointer.
+
+
+#### 15)Explain the algorithim for infix to postfix expression and convert the following infix to postfix expression using stack: A + (B*C-(D/E^F)*G)*H.?
+#### Ans:
+Infix to postfix conversion is a process of converting an infix expression (an expression written in the standard infix notation) to a postfix expression (an expression written in the postfix notation). The algorithm for converting infix to postfix expression using a stack is as follows:
+
+1) Initialize an empty stack.
+
+1) Scan the infix expression from left to right.
+
+1) If the scanned character is an operand, add it to the postfix expression.
+
+1) If the scanned character is an operator, pop operators from the stack and add them to the postfix expression until you find an operator with a lower precedence or the stack becomes empty. Push the scanned operator onto the stack.
+
+1) If the scanned character is an open parenthesis, push it onto the stack.
+
+1) If the scanned character is a close parenthesis, pop operators from the stack and add them to the postfix expression until you find an open parenthesis. Pop the open parenthesis.
+
+1) Repeat steps 2-6 until all characters are scanned.
+
+1) Pop any remaining operators from the stack and add them to the postfix expression.
+
+Here is the infix to postfix conversion of the expression "A + (B*C-(D/E^F)*G)*H" using the algorithm described above:
+
+<table border='1'>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>Infix</th>
+      <th>Stack</th>
+      <th>Postfix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>A + (B*C-(D/E^F)*G)*H</td>
+      <td>empty</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>+ (B*C-(D/E^F)*G)*H</td>
+      <td>A</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>+ (B*C-(D/E^F)*G)*H</td>
+      <td>A</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>+ (B*C-(D/E^F)*G)*H</td>
+      <td>A</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>+ B*C-(D/E^F)*G)*H</td>
+      <td>A</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>+ B*C-(D/E^F)*G)*H</td>
+      <td>A B</td>
+      <td>AB</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>+ B*C-(D/E^F)*G)*H</td>
+      <td>A B</td>
+      <td>AB</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>+ B*C-(D/E^F)*G)*H</td>
+      <td>A B</td>
+      <td>AB</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C</td>
+      <td>ABC*</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C</td>
+      <td>ABC*</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C</td>
+      <td>ABC*</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C D</td>
+      <td>ABC*D</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C D</td>
+      <td>ABC*D</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C D</td>
+      <td>ABC*D</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C D E</td>
+      <td>ABC*DE</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C D E</td>
+      <td>ABC*DE</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C D E^F</td>
+      <td>ABC*DEF^</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C D E^F</td>
+      <td>ABC*DEF^/</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C D E^F-G</td>
+      <td>ABC*DEF^/G-</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B*C D E^F-G</td>
+      <td>ABC*DEF^/G-</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B<em>C D E^F-G</em>H</td>
+      <td>ABC<em>DEF^/G-H</em></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B<em>C D E^F-G</em>H</td>
+      <td>ABC<em>DEF^/G-H</em></td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>+ B*C-D/E^F)*G)*H</td>
+      <td>A B<em>C D E^F-G</em>H</td>
+      <td>ABC<em>DEF^/G-H</em>+</td>
+    </tr>
+  </tbody>
+</table>
+
+So the postfix expression is : ABC*DEF^/G-H
